@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores Escribanos */
+  --color-escribano-verde: #2D5016;
+  --color-escribano-verde-light: #4A7C2C;
+  --color-escribano-verde-accent: #87A96B;
+  --color-escribano-rojo: #C1272D;
+  --color-escribano-rojo-light: #E85D62;
+  
+  /* Neutros */
+  --color-neutral-50: #FFFFFF;
+  --color-neutral-100: #F5F5F5;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-700: #334155;
+  --color-neutral-900: #0F172A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+  font-family: system-ui, -apple-system, sans-serif;
+}
