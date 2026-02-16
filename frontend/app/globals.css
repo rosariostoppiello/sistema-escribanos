@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: var(--font-raleway), sans-serif;
+}
+
 @theme {
   /* Colores Escribanos */
   --color-escribano-verde: #2D5016;
@@ -26,4 +30,646 @@ body {
   background: var(--color-neutral-50);
   color: var(--color-neutral-900);
   font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 3rem;
+  background: linear-gradient(135deg, #f1f8f4 0%, #e0f2e9 100%);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 166, 81, 0.08);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 166, 81, 0.1);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-logo img {
+  height: 55px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navbar-links a {
+  position: relative;
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+}
+
+.navbar-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00a651, #00d166);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(0, 166, 81, 0.08);
+  color: #00a651;
+  transform: translateY(-2px);
+}
+
+.navbar-links a:hover::before {
+  width: 80%;
+}
+
+.navbar-links a.active {
+  background-color: rgba(0, 166, 81, 0.12);
+  color: #00a651;
+}
+
+.navbar-links a.active::before {
+  width: 80%;
+}
+
+.navbar-auth a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;  /* era 700, bajamos intensidad */
+  font-size: 0.95rem;
+  background: #2e7d32;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;  /* era 12px, menos redondeado */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 166, 81, 0.2);  /* sombra más sutil */
+  letter-spacing: 0.3px;  /* era 0.5px, menos espaciado */
+}
+
+.navbar-auth a:hover {
+  transform: translateY(-2px);  /* era -3px, menos movimiento */
+  box-shadow: 0 4px 12px rgba(0, 166, 81, 0.3);
+  background: #1b5e20;
+}
+
+.navbar-auth a:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+  min-height: 70vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdf9 100%);
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1b5e20;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #00a651;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 166, 81, 0.4);
+  background: #008f47;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder {
+  font-size: 10rem;
+  opacity: 0.2;
+}
+
+/* Book */
+.book-section-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 6rem;
+  background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);
+  gap: 4rem;
+}
+
+.book-text {
+  flex: 1;
+  text-align: left;
+}
+
+.book-text h2 {
+  font-size: 3rem;
+  color: #1b5e20;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.book-text p {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+.book-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  perspective: 2000px;
+}
+
+  /* 3d */
+.book-interactive {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+.book-cover-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 12px 12px 0;
+  transform-origin: left center;
+  transition: transform 1s ease;
+  cursor: pointer;
+  box-shadow: 
+    8px 8px 25px rgba(0, 0, 0, 0.4),
+    inset -3px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  backface-visibility: hidden;
+}
+
+.book-interactive.open .book-cover-page {
+  transform: rotateY(-165deg);
+  cursor: default;
+}
+
+.cover-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 12px 12px 0;
+  backdrop-filter: blur(2px);
+  backface-visibility: hidden;
+}
+
+.cover-overlay h3 {
+  color: #f4e4c1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  font-family: 'Georgia', serif;
+}
+
+.cover-overlay p {
+  color: #f4e4c1;
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+  /* Páginas internas */
+.book-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fdfaf5;
+  background-image: url(/book-spine.jpg);
+  background-size: 100% 100%;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 
+    inset 3px 0 10px rgba(0, 0, 0, 0.15),
+    6px 6px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.6s ease 0.5s;
+}
+
+.book-interactive.open .book-inside {
+  opacity: 1;
+}
+
+.book-page-content {
+  height: 100%;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(253, 250, 245, 0.95);
+  border-radius: 0 10px 10px 0;
+}
+
+.benefit-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.book-page-content h3 {
+  font-size: 2rem;
+  color: #8b0000;
+  margin-bottom: 1.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.book-page-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  min-height: 60px;
+}
+
+.page-btn {
+  background: transparent;
+  color: #8b0000;
+  border: 2px solid #8b0000;
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  min-width: 120px;
+  height: 48px;
+}
+
+.page-btn:hover {
+  background: #8b0000;
+  color: #f4e4c1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+}
+
+.page-indicator {
+  color: #8b0000;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.book-spine-visible {
+  position: absolute;
+  left: -30px;
+  width: 30px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* How it works */
+.how-it-works {
+  padding: 5rem 6rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdf9 100%);
+  text-align: center;
+  position: relative;
+}
+
+.how-it-works h2 {
+  font-size: 2.8rem;
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
+
+.how-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 4rem;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  flex: 1;
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 166, 81, 0.15);
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #00a651 0%, #00d166 100%);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
+}
+
+.step-icon {
+  font-size: 4rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.step h3 {
+  color: #2e7d32;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.step p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+  /* Línea conectora entre pasos */
+.connecting-line {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #c8e6c9 20%, 
+    #00a651 50%, 
+    #c8e6c9 80%, 
+    transparent 100%
+  );
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Sobre nosotros */
+.sobre-nosotros-page {
+  min-height: 100vh;
+}
+
+.sobre-hero {
+  padding: 5rem 6rem 3rem 6rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);
+}
+
+.sobre-hero h1 {
+  font-size: 3.5rem;
+  color: #1b5e20;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sobre-content {
+  padding: 4rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.sobre-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.sobre-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 166, 81, 0.15);
+}
+
+.sobre-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-card h2 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-card p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.sobre-cta {
+  padding: 4rem 6rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);
+}
+
+.sobre-cta h2 {
+  font-size: 2.5rem;
+  color: #1b5e20;
+  margin-bottom: 2rem;
+}
+
+/* Login Page */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #f8fdf9 0%, #e8f5e9 100%);
+  padding: 2rem;
+}
+
+.login-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-header h1 {
+  font-size: 2.5rem;
+  color: #1b5e20;
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: var(--font-raleway), sans-serif;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #00a651;
+  box-shadow: 0 0 0 3px rgba(0, 166, 81, 0.1);
+}
+
+.login-button {
+  background: #00a651;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.login-button:hover {
+  background: #008f47;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 166, 81, 0.3);
+}
+
+.login-toggle {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.login-toggle p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.login-toggle button {
+  background: none;
+  border: none;
+  color: #00a651;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.login-toggle button:hover {
+  color: #008f47;
 }
