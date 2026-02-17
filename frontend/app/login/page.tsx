@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true)
@@ -55,7 +56,16 @@ export default function Login() {
               {isLogin ? 'Registrate' : 'Iniciá sesión'}
             </button>
           </p>
+          <p>
+              {'¿Olvidaste tu contraseña?'}
+            <button>
+              <Link href="/restablecer-contrasena">
+                Recuperala.
+              </Link>
+            </button>
+          </p>
         </div>
+
       </div>
     </main>
   )
