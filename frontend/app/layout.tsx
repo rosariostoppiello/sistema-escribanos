@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/layout/Navbar";
 import { Raleway } from "next/font/google";
+import { AuthProvider } from "./context/AuthContext";
+  // todo (navbar, pages, ...) puede acceder a saber si hay un usuario logueado.
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${raleway.variable} antialiased`} style={{ fontFamily: 'var(--font-raleway)' }}>
-        <Navbar />
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

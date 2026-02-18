@@ -148,6 +148,53 @@ body {
   box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
 }
 
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-perfil {
+  text-decoration: none;
+  color: var(--fondo-blanco);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: var(--verde-subtitulo);
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 166, 81, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-perfil:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 166, 81, 0.3);
+  background: var(--verde-titulo);
+}
+
+.navbar-logout {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  background: #ef4444;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+}
+
+.navbar-logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.25);
+  background: #dc2626;
+}
+
 /* Hero Section */
 .hero {
   display: flex;
@@ -697,6 +744,17 @@ body {
 
 .login-toggle button:hover {
   color: var(--verde-oscuro);
+}
+
+.error-message {
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 /* Simulador de Arancel */
