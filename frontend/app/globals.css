@@ -1166,7 +1166,7 @@ body {
   }
 }
 
-/* Página de Perfil - Versión con carpetas */
+/* Página de Perfil */
 .perfil-page {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--fondo-blanco) 0%, var(--fondo-verde-muy-claro) 100%);
@@ -1181,7 +1181,7 @@ body {
   gap: 2rem;
 }
 
-/* Sidebar */
+  /* Sidebar */
 .perfil-sidebar {
   background: var(--fondo-blanco);
   border-radius: 20px;
@@ -1229,7 +1229,7 @@ body {
   margin: 0.3rem 0;
 }
 
-/* Plan */
+  /* Plan */
 .perfil-plan {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1353,7 +1353,7 @@ body {
   color: #ef4444;
 }
 
-/* Main */
+  /* Main */
 .perfil-main {
   background: var(--fondo-blanco);
   border-radius: 20px;
@@ -1382,7 +1382,7 @@ body {
   gap: 1.5rem;
 }
 
-/* Carpeta clickeable */
+  /* Carpeta clickeable */
 .mes-grupo {
   margin-bottom: 1rem;
 }
@@ -1422,7 +1422,7 @@ body {
   font-weight: 600;
 }
 
-/* Lista de cálculos dentro de la carpeta */
+  /* Lista de cálculos dentro de la carpeta */
 .calculos-lista {
   margin-top: 1rem;
   padding-left: 2.5rem;
